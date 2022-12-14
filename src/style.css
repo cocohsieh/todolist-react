@@ -1,0 +1,168 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  margin-top: 40px;
+}
+
+.todolist-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: #fafafa;
+  border: 1px solid #55d040;
+  border-radius: 10px;
+  width: 540px;
+  min-height: 400px;
+}
+
+h1 {
+  color: #3b3f4e;
+}
+
+/* 新增區域 */
+.add-input-area {
+  margin-bottom: 30px;
+}
+
+.add-input,
+.add-button {
+  display: inline-block;
+  border: 2px solid #55d040;
+  border-radius: 3px;
+  font-size: 16px;
+}
+
+.add-input {
+  vertical-align: top;
+  width: 225px;
+  height: 40px;
+  border: 2px solid #55d040;
+  margin-right: 10px;
+}
+
+.add-button {
+  box-sizing: border-box;
+  width: 80px;
+  height: 40px;
+  background-color: #55d040;
+  border: 2px solid transparent;
+  color: white;
+  font-weight: bold;
+}
+
+/* 原始的input box */
+.todo-input-box {
+  width: 200px;
+  display: flex;
+  align-items: center;
+  color: #3b3f4e;
+  font-size: 20px;
+  font-weight: 600;
+  margin-left: 10px;
+}
+
+/* 編輯時input變成只有底線 */
+.border-bottom-input {
+  border: 0;
+  outline: 0;
+  border-bottom: 2px solid #55d040;
+  opacity: 0.6;
+  margin-left: 10px;
+  width: 240px;
+}
+
+/* 編輯時的字體 */
+.edit-text {
+  font-size: 20px;
+  color: #c2c2c2;
+  width: 160px;
+}
+
+.btn-container {
+  margin-left: 20px;
+}
+
+/* 編輯/刪除按鈕 */
+.btn-style {
+  background: transparent;
+  color: #3b3f4e;
+  border: 2px solid #3b3f4e;
+  border-radius: 3px;
+  margin-right: 10px;
+  padding: 5px 15px;
+  font-size: 16px;
+}
+
+/* 畫完成刪除線 */
+.cross {
+  text-decoration: line-through;
+  text-decoration-thickness: 1.4px;
+  width: 200px;
+  display: flex;
+  align-items: center;
+  color: #3b3f4e;
+  font-size: 20px;
+  font-weight: bolder;
+  margin-left: 10px;
+}
+
+.todolist-container {
+  display: flex;
+  flex-direction: column;
+}
+.box {
+  display: flex;
+  justify-content: start;
+}
+
+.todo {
+  display: flex;
+  justify-content: flex-start;
+  padding: 8px;
+}
+
+.checkbox {
+  display: flex;
+  align-items: center;
+  width: 240px;
+  /* margin-right: 10px; */
+}
+
+/* checkbox style */
+input[type="checkbox"] {
+  -webkit-appearance: none;
+  appearance: none;
+  background-color: var(--form-background);
+  margin: 0;
+  /* font: inherit; */
+  color: currentColor;
+  width: 2em;
+  height: 2em;
+  /* 框框顏色 */
+  border: 0.15em solid #55d040;
+  /* border-radius: 0.15em; */
+  /* transform: translateY(-0.075em); */
+  display: grid;
+  place-content: center;
+}
+
+input[type="checkbox"]::before {
+  content: "";
+  width: 0.9em;
+  height: 0.9em;
+  /* 勾勾 */
+  clip-path: polygon(14% 44%, 0% 65%, 50% 100%, 100% 16%, 80% 0%, 43% 62%);
+  transform: scale(0);
+  /* transform: scale(1); */
+  transform-origin: bottom left;
+  /* transition: 120ms transform ease-in-out; */
+  box-shadow: inset 1.15em 1.15em#55d040;
+}
+
+input[type="checkbox"]:checked::before {
+  transform: scale(1);
+}
